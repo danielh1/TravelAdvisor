@@ -32,6 +32,7 @@ namespace TravelAdvisor.API.Controllers
         }
 
         [HttpGet("conditions")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<ActionResult<WeatherForecast>> Get([FromQuery] String Latitude , String Longitude)
         {
             if (String.IsNullOrEmpty(Latitude)|string.IsNullOrEmpty(Longitude))
@@ -90,6 +91,7 @@ namespace TravelAdvisor.API.Controllers
         
         
         [HttpGet("climate")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<ActionResult<OpenWeather>> GetClimate([FromQuery] String Latitude , String Longitude)
         {
             
@@ -131,6 +133,7 @@ namespace TravelAdvisor.API.Controllers
         }
 
         [HttpPost("BulkForecasts")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         [ProducesResponseType(typeof(object), (int) HttpStatusCode.OK)]
          public async Task<ActionResult<List<Climate>>> GetBulkWeatherForecasts ([FromBody] List<Coordinates> locations) {
    

@@ -18,6 +18,7 @@ namespace TravelAdvisor.API.Controllers
 
         [Route("/api/geocode")]
         [HttpPost]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IActionResult> Get([FromBody] string address)
         {
             if (string.IsNullOrEmpty(address))
