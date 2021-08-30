@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+
+  travel-advisor-app:
+    build: .
+    container_name: travel-advisor-app
+    depends_on:
+      - travel-advisor-redis
+    expose:
+      - 80
+    ports:
+      - 8080:80
+
+  travel-advisor-redis:
+    image: docker.io/bitnami/redis:6.2
+    container_name: travel-advisor-redis
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis_data:/bitnami/redis/data'
+
+volumes:
+  redis_data:
+    driver: local
