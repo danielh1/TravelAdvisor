@@ -3,6 +3,24 @@
 
 A Sample WebApi project to demonstrate aggregation of data from GoogleMaps API and OpenWeatherMap API.
 
+## Just want to try out this App ?
+
+... Then update `../src/TravelAdvisor.API/appsettings.json` with your own API Keys
+
+### Run ########
+... and start the application:
+
+```bash
+docker-compose up --build
+```
+
+Then goto http://localhost:8080/swagger/index.html
+
+### Rebuild ########
+```bash
+docker-compose up --build
+```
+
 ## Requirements
 
 - You will need to supply your own Google API key as well as a OpenWeatherMaps API key
@@ -30,22 +48,6 @@ A Sample WebApi project to demonstrate aggregation of data from GoogleMaps API a
     ...
   }
 ```
-## Just want to try out this App ?
 
-... Then update Update `../src/TravelAdvisor.API/appsettings.json` with your own API Keys
-
-### Run ########
-... and start the application:
-
-```bash
-docker-compose up --build
-```
-
-Then goto http://localhost:8080/swagger/index.html
-
-### Rebuild ########
-```bash
-docker-compose up --build
-```
 
 
